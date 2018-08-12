@@ -49,7 +49,7 @@ class Parse extends Command
         if (filter_var($url, FILTER_VALIDATE_URL)) {
             try {
                 /*ToDo вынести проверки */
-                if (!empty($depth) || $depth == 0) {
+                if (!empty($depth) || $depth === '0') {
                     $depth = (int)$depth;
                 } else {
                     $depth = NULL;
