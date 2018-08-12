@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\DataParseUrl;
-use App\Parser\ParserQueue;
-use App\Repositories\DispatchData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 

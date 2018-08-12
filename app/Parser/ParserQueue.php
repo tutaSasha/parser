@@ -46,7 +46,7 @@ class ParserQueue
 
     protected function getHtml(){
         try{
-            $html = HtmlDomParser::file_get_html($this->DispatchData->geturl(), $use_include_path = false, $context = null, $offset = 0);
+          return HtmlDomParser::file_get_html($this->DispatchData->geturl(), $use_include_path = false, $context = null, $offset = 0);
         }catch (\Exception $e){
            return false;
         }
