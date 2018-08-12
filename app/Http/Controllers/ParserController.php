@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\CheckParseUrl;
 use App\DataParseUrl;
-use App\Jobs\JobParserQueue;
 use App\Parser\ParserQueue;
 use App\Repositories\DispatchData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
-use Sunra\PhpSimple\HtmlDomParser;
 
 class ParserController extends Controller
 {
 
     public function index(  )
     {
+        $DispatchData = new DispatchData('https://singularika.com/topics/automated-operator/');
+        $ParserQueue = new ParserQueue($DispatchData);
+        $ParserQueue->run();
         return view('main.index');
     }
 

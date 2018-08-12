@@ -36,11 +36,20 @@ class ParserQueue
 
     protected function serchAndDispatch()
     {
-        $html = HtmlDomParser::file_get_html($this->DispatchData->geturl(), $use_include_path = false, $context = null, $offset = 0);
-        $searchCountImg = $this->searchCountImg($html->find('img'));
-        $this->SendDispatch($html->find('a'));
-        if ($this->checkMaxCountPage())
-            DataParseUrl::SaveDataParseUrl(new RepositoriesData($searchCountImg, $this->time(), $this->DispatchData->geturl()));
+        if($html=$this->getHtml()){
+            $searchCountImg = $this->searchCountImg($html->find('img'));
+            $this->SendDispatch($html->find('a'));
+            if ($this->checkMaxCountPage())
+                DataParseUrl::SaveDataParseUrl(new RepositoriesData($searchCountImg, $this->time(), $this->DispatchData->geturl()));
+        }
+    }
+
+    protected function getHtml(){
+        try{
+            $html = HtmlDomParser::file_get_html($this->DispatchData->geturl(), $use_include_path = false, $context = null, $offset = 0);
+        }catch (\Exception $e){
+           return false;
+        }
     }
 
     protected function checkMaxCountPage()
