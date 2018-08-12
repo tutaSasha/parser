@@ -1,0 +1,36 @@
+.sorter-block {
+  display: inline-block;
+  margin-left: 5px;
+  width: 14px;
+  vertical-align: sub;
+  color: #ddd;
+}
+
+.sorter-block .fa {
+  display: block;
+  line-height: 0.5;
+}
+
+.sorter-block .fa.active {
+  color: #5dbeaa;
+}
+
+.table tr:hover {
+  background-color: #f3f3f3;
+}
+
+.table .exp_warn {
+  background-color: #ffffcf;
+}
+
+.table .exp_warn:hover {
+  background-color: #ffffa9;
+}
+
+.table .exp_err {
+  background-color: #ffe7e7;
+}
+
+.table .exp_err:hover {
+  background-color: #ffcdcd;
+}
