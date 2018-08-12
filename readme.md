@@ -11,12 +11,14 @@
 
 Установка:
 
-- git clone 
+- git clone https://github.com/tutaSasha/parser.git
 - php artisan migrate
 - php artisan queue:work
 - php artisan parse:run {url} {depth?} {MaxCountPage?}
 
 url - http://example.site || https://example.site
+
 depth - integer
+
 MaxCountPage - integer
 
