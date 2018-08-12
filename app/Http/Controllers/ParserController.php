@@ -13,9 +13,6 @@ class ParserController extends Controller
 
     public function index(  )
     {
-        $DispatchData = new DispatchData('https://singularika.com/topics/automated-operator/');
-        $ParserQueue = new ParserQueue($DispatchData);
-        $ParserQueue->run();
         return view('main.index');
     }
 
